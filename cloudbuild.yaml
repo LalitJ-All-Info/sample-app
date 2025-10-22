@@ -1,0 +1,6 @@
+export REGION="us-east1"
+export ZONE="us-east1-c"
+for file in sample-app/cloudbuild-dev.yaml sample-app/cloudbuild.yaml; do
+    sed -i "s/us-east1/${REGION}/g" "$file"
+    sed -i "s/us-east1-c/${ZONE}/g" "$file"
+done
